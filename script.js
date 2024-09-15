@@ -61,10 +61,9 @@ function playRound(humanChoice, computerChoice){
 
 
 
-for(let i = 0; i < 5; i++){
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);
-}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+playRound(humanChoice, computerChoice);
 
 alert("Thanks for Playing!");
