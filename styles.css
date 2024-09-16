@@ -50,3 +50,7 @@ html, body {
     justify-content: center;
     align-items: center;
 }
+
+#scoreboard{
+    width: 200px;
+}

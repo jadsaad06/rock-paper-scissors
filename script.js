@@ -1,5 +1,5 @@
-const humanChoicePic = document.querySelector(".option-UI#playerChoice");
-const computerChoicePic = document.querySelector(".option-UI#compChoice");
+const humanChoicePic = document.querySelector("#playerChoice");
+const computerChoicePic = document.querySelector("#compChoice");
 
 const changeChoicePic = function(player, choice){
     if(choice == "scissors"){
@@ -27,17 +27,10 @@ const getComputerChoice = function () {
     return compChoice;
 }
 
-
-const getHumanChoice = function(){
-    let choice = prompt("Rock, Paper, or Scissors?");
-
-    return choice.toLowerCase();
-}
-
 let humanScore = 0;
 let computerScore = 0;
-const scoreboard = querySelector("#scoreboard");
-const declareWinner = querySelector("#declare-winner");
+const scoreboard = document.querySelector("#scoreboard");
+const declareWinner = document.querySelector("#declare-winner");
 
 const playRound = function (humanChoice, computerChoice){
     changeChoicePic(humanChoicePic, humanChoice);
@@ -45,44 +38,52 @@ const playRound = function (humanChoice, computerChoice){
 
     if(humanChoice == "rock"){
         if(computerChoice == "paper"){
-            declareWinner.value ="You lose! Paper beats Rock";
+            declareWinner.textContent = "You lose! Paper beats Rock";
             computerScore++;
         }else if(computerChoice == "scissors"){
-            declareWinner.value ="You win! Rock beats Scissors";
+            declareWinner.textContent ="You win! Rock beats Scissors";
             humanScore++;
         }else{
-            declareWinner.value ="Tie! Computer chose Rock as well!";
+            declareWinner.textContent ="Tie! Computer chose Rock as well!";
         }
     }else if (humanChoice == "paper"){
         if(computerChoice == "scissors"){
-            declareWinner.value ="You lose! Scissors beats Paper";
+            declareWinner.textContent ="You lose! Scissors beats Paper";
             computerScore++;
         }else if(computerChoice == "rock"){
-            declareWinner.value ="You win! Paper beats Rock";
+            declareWinner.textContent ="You win! Paper beats Rock";
             humanScore++;
         }else{
-            declareWinner.value ="Tie! Computer chose Paper as well!";
+            declareWinner.textContent ="Tie! Computer chose Paper as well!";
         }
     }else{
         if(computerChoice == "rock"){
-            declareWinner.value ="You lose! Rock beats Scissors";
+            declareWinner.textContent ="You lose! Rock beats Scissors";
             computerScore++;
         }else if(computerChoice == "paper"){
-            declareWinner.value ="You win! Scissors beats Paper";
+            declareWinner.textContent ="You win! Scissors beats Paper";
             humanScore++;
         }else{
-            declareWinner.value ="Tie! Computer chose Scissors as well!";
+            declareWinner.textContent ="Tie! Computer chose Scissors as well!";
         }
     }
 
-    scoreboard.value =`Human Score: ${humanScore}\nComputer Score: ${computerScore}`;
+    scoreboard.textContent =`Human Score: ${humanScore}\nComputer Score: ${computerScore}`;
+
+    if(humanScore + computerScore == 5){
+        declareWinner.textContent = "Thanks for Playing!"
+        humanScore = 0;
+        computerScore = 0;
+    }
 }
 
+scoreboard.textContent = `Human Score: ${humanScore}\nComputer Score: ${computerScore}`;
 
+const btn = document.querySelectorAll(".btn");
 
+btn.forEach((btn) =>{
+    btn.addEventListener("click", ()=>{
+        playRound(btn.id,getComputerChoice());
+    })
+})
 
-// const humanChoice = getHumanChoice();
-// const computerChoice = getComputerChoice();
-// playRound(humanChoice, computerChoice);
-
-// declareWinner.value ="Thanks for Playing!");
