@@ -1,0 +1,45 @@
+body{
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+
+#icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.option-UI{
+    flex-direction: column;
+}
+
+#rps-buttons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.btn{
+    margin: 20px;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+
+#player-icon #computer-icon{
+    display: flex;
+    max-height: 250px;
+} 

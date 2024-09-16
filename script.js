@@ -62,8 +62,8 @@ function playRound(humanChoice, computerChoice){
 
 
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-playRound(humanChoice, computerChoice);
+// const humanChoice = getHumanChoice();
+// const computerChoice = getComputerChoice();
+// playRound(humanChoice, computerChoice);
 
-alert("Thanks for Playing!");
+// alert("Thanks for Playing!");
